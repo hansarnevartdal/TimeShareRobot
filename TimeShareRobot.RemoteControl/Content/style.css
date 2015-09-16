@@ -1,0 +1,33 @@
+﻿body {
+  background-color: black;
+  color: white;
+  font-family: Consolas;
+}
+body h1 {
+  font-size: 20pt;
+  width: 100%;
+  text-align: center;
+}
+body section {
+  background-color: #555555;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+body section h2 {
+  font-size: 15pt;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+body section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body section ul li {
+  background-color: black;
+  margin: 0.3em;
+  padding: 1em;
+  text-align: center;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx1QkFBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTs7QUFISixJQUtJO0VBQ0ksZUFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTs7QUFSUixJQVdJO0VBQ0kseUJBQUE7RUFDQSxhQUFBO0VBQ0EsY0FBQTs7QUFkUixJQVdJLFFBS0k7RUFDSSxlQUFBO0VBQ0EsU0FBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTs7QUFwQlosSUFXSSxRQVlJO0VBQ0ksZ0JBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTs7QUExQlosSUFXSSxRQVlJLEdBS0k7RUFDSSx1QkFBQTtFQUNBLGFBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUEiLCJmaWxlIjoidW5kZWZpbmVkIn0= */

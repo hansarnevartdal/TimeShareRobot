@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Control the robot!</title>
+        <link href="../Content/style.css" rel="stylesheet" />
+        <script src="../Scripts/jquery-1.10.2.js"></script>
+        <script src="../Scripts/angular.js"></script>
+        <script src="../Scripts/jquery.signalR-2.2.0.js"></script>
+        <script src="http://localhost:50278/signalr/hubs"></script>
+    </head>
+    <body ng-app="RemoteControlApp">
+        <h1>I AM UR ROBOT</h1>
+        <section ng-controller="AdminController as admin">
+            <h2>MODE</h2>
+            <ul>
+                <li ng-if="!admin.state.locked" ng-click="admin.api.lockRobot()">LOCK</li>
+                <li ng-if="admin.state.locked" ng-click="admin.api.unlockRobot()">UNLOCK</li>
+            </ul>
+        </section>
+        <section ng-controller="ActionCenterController as model">
+            <h2>UR COMMAND</h2>
+            <ul>
+                <li ng-repeat="action in model.robot.actions">{{ action }}</li>
+            </ul>
+        </section>
+
+        <script src="/App/app.module.js"></script>
+        <script src="/App/Services/robot.service.js"></script>
+        <script src="/App/Features/Admin/admin.controller.js"></script>
+        <script src="/App/Features/ActionCenter/actioncenter.controller.js"></script>
+    </body>
+</html>
