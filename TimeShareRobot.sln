@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeShareRobot.Server", "TimeShareRobot\TimeShareRobot.Server.csproj", "{BC0D82F9-6188-47E2-94C2-3E574516933D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeShareRobot.Server", "TimeShareRobot.Server\TimeShareRobot.Server.csproj", "{BC0D82F9-6188-47E2-94C2-3E574516933D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeShareRobot.RobotBrain", "TimeShareRobot.RobotBrain\TimeShareRobot.RobotBrain.csproj", "{5BC4DEC8-2BD6-4380-84F1-ABF823E16E34}"
 EndProject
