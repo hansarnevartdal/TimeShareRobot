@@ -26,19 +26,19 @@ namespace TimeShareRobot.Server
         }
 
         // Events from robot
-        public void RobotLocked(string lockedForConnectionId)
+        public void RobotLocked(string controllerConnectionId)
         {
-            Clients.Client(lockedForConnectionId).robotLocked();
+            Clients.Client(controllerConnectionId).robotLocked(Context.ConnectionId);
         }
 
-        public void RobotUnlocked(string lockedForConnectionId)
+        public void RobotUnlocked(string controllerConnectionId)
         {
-            Clients.Client(lockedForConnectionId).robotUnlocked();
+            Clients.Client(controllerConnectionId).robotUnlocked(Context.ConnectionId);
         }
 
-        public void RobotMessage(string robotConnectionId, string message)
+        public void RobotMessage(string controllerConnectionId, string message)
         {
-            Clients.Client(robotConnectionId).robotMessage(message);
+            Clients.Client(controllerConnectionId).robotMessage(Context.ConnectionId, message);
         }
 
 
@@ -46,7 +46,7 @@ namespace TimeShareRobot.Server
         public override Task OnConnected()
         {
             var connectionId = Context.ConnectionId;
-            var qrcUrl = _urlShortener.GetQrCodeForUrl("http://localhost:53956/" + connectionId);
+            var qrcUrl = _urlShortener.GetQrCodeForUrl("http://localhost:50325/App/#/?connectionId=" + connectionId);
 
             Clients.Client(connectionId).setQrCode(new Uri(qrcUrl, UriKind.Absolute));
             return base.OnConnected();

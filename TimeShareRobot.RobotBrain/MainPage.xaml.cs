@@ -25,6 +25,7 @@ namespace TimeShareRobot.RobotBrain
         public MainPage()
         {
             this.InitializeComponent();
+            DataContext = new RobotViewModel();
         }
     }
 }

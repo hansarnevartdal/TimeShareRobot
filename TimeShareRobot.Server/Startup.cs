@@ -1,4 +1,5 @@
 ﻿using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Owin;
 
 [assembly: OwinStartup(typeof(TimeShareRobot.Server.Startup))]
@@ -8,7 +9,8 @@ namespace TimeShareRobot.Server
     {
         public void Configuration(IAppBuilder app)
         {
-            app.MapSignalR();
+            app.UseCors(CorsOptions.AllowAll);
+            app.MapSignalR();                
         }
     }
 }
