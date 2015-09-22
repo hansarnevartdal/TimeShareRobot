@@ -49,11 +49,11 @@
 
                         // Define commands
                         service.commands.lockRobot = function () {
-                            proxy.server.lockRobot();
+                            proxy.server.lockRobot(connectionId);
                         };
 
                         service.commands.unlockRobot = function () {
-                            proxy.server.unlockRobot();
+                            proxy.server.unlockRobot(connectionId);
                         };
                     })
                     .fail(function (err) {
