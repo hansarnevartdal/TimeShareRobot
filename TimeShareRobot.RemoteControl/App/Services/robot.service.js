@@ -7,6 +7,7 @@
 
     function robotService($log, $location, $rootScope) {
         var service = this;
+        service.hubsUrl = getHubsUrl(); // Set globaly in index.cshtml
         service.connectedToRobot = undefined;
 
         service.commands = { };
@@ -42,7 +43,7 @@
                 };
 
                 // Start connection
-                $.connection.hub.url = "http://localhost:50278/signalr";
+                $.connection.hub.url = service.hubsUrl;
                 $.connection.hub.start()
                     .done(function () {
                         $log.info('Now connected, connection ID=' + $.connection.hub.id);

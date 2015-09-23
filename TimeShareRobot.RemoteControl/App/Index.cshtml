@@ -6,8 +6,7 @@
         <script src="../Scripts/jquery-2.1.4.js"></script>
         <script src="../Scripts/angular.js"></script>
         <script src="../Scripts/jquery.signalR-2.2.0.js"></script>
-        <!--<script src="http://localhost:50278/signalr/hubs"></script>-->
-        <script src="http://time-share-robot-server.azurewebsites.net/signalr/hubs"></script>
+        <script src="@System.Web.Configuration.WebConfigurationManager.AppSettings["HubsUrl"]"></script>
     </head>
     <body ng-app="RemoteControlApp">
         <h1>I AM UR ROBOT</h1>
@@ -22,6 +21,11 @@
 
         </section>
 
+        <script>
+            function getHubsUrl() {
+                return '@System.Web.Configuration.WebConfigurationManager.AppSettings["HubsUrl"]';
+            }
+        </script>
         <script src="/App/app.module.js"></script>
         <script src="/App/Services/robot.service.js"></script>        
         <script src="/App/Features/ActionCenter/actioncenter.controller.js"></script>
