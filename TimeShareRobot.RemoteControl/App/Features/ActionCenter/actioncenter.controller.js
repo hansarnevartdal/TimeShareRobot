@@ -12,7 +12,7 @@
 
         model.state = {
             locked: false,
-            message: undefined
+            messages: []
         };
 
         model.api = robotService.commands;
@@ -32,15 +32,18 @@
 
             // Eventhandlers
             function robotLockedHandler() {
-                model.locked = true;
+                model.state.locked = true;
+                $scope.$apply();
             }
 
             function robotUnlockedHandler() {
-                model.locked = false;
+                model.state.locked = false;
+                $scope.$apply();
             }
 
-            function robotMessageHandler(message) {
-                model.message = message;
+            function robotMessageHandler(event, message) {
+                model.state.messages.unshift(message);
+                $scope.$apply();
             }
         }
     }

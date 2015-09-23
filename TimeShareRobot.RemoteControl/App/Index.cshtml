@@ -16,9 +16,9 @@
                 <li ng-if="!center.state.locked" ng-click="center.api.lockRobot()">LOCK</li>
                 <li ng-if="center.state.locked" ng-click="center.api.unlockRobot()">UNLOCK</li>
             </ul>
-
-            <p>{{ center.state.message }}</p>
-
+            <ul>
+                <li ng-repeat="message in center.state.messages track by $index"><p>{{ message }}</p></li>
+            </ul>
         </section>
 
         <script>

@@ -27,18 +27,21 @@
 
                 // Set up client eventpublishers
                 proxy.client.robotLocked = function (robotConnectionId) {
+                    $log.debug("EVENT received: RobotLocked.");
                     if (robotConnectionId == connectionId) {
-                        $rootScope.$emit(service.events.robotLocked);
+                        $rootScope.$broadcast(service.events.robotLocked);
                     }
                 };
                 proxy.client.robotUnlocked = function (robotConnectionId) {
+                    $log.debug("EVENT received: RobotUnlocked.");
                     if (robotConnectionId == connectionId) {
-                        $rootScope.$emit(service.events.robotUnlocked);
+                        $rootScope.$broadcast(service.events.robotUnlocked);
                     }
                 };
                 proxy.client.robotMessage = function (robotConnectionId, message) {
+                    $log.debug("EVENT received: RobotMessage. " + message);
                     if (robotConnectionId == connectionId) {
-                        $rootScope.$emit(service.events.robotMessage, message);
+                        $rootScope.$broadcast(service.events.robotMessage, message);
                     }
                 };
 
