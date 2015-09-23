@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNet.SignalR.Client;
 using PropertyChanged;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.UI.Core;
 using Windows.UI.Xaml.Media.Imaging;
 
@@ -20,7 +16,8 @@ namespace TimeShareRobot.RobotBrain
         {
             _dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 
-            var connection = new HubConnection("http://localhost:50278/signalr");
+            //var connection = new HubConnection("http://localhost:50278/signalr");
+            var connection = new HubConnection("http://time-share-robot-server.azurewebsites.net/signalr");
             proxy = connection.CreateHubProxy("RobotHub");
 
             RegisterEventHandlers(proxy);            

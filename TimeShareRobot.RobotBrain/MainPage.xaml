@@ -9,13 +9,15 @@
 
     <Grid Padding="20">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="130" />
         </Grid.RowDefinitions>
-
-        <Image Source="{Binding ControlQrc}"  Margin="0,10,10,0" Width="100" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="1"  Grid.Column="0" Grid.RowSpan="1" />
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/bender.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+        <Image Source="{Binding ControlQrc}"  Margin="50,50,50,50" Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}" VerticalAlignment="Stretch" Grid.Row="0"  Grid.Column="1" />        
     </Grid>
 </Page>

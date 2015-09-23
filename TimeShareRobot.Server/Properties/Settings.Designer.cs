@@ -31,5 +31,14 @@ namespace TimeShareRobot.Server.Properties {
                 return ((string)(this["ApiKey"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:50325/App/#/?connectionId={0}")]
+        public string RemoteControlAppUrlFormat {
+            get {
+                return ((string)(this["RemoteControlAppUrlFormat"]));
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNet.SignalR;
 using System.Threading.Tasks;
 using TimeShareRobot.Server.UrlShortenerApi;
+using TimeShareRobot.Server.Properties;
 
 namespace TimeShareRobot.Server
 {
@@ -46,7 +47,7 @@ namespace TimeShareRobot.Server
         public override Task OnConnected()
         {
             var connectionId = Context.ConnectionId;
-            var qrcUrl = _urlShortener.GetQrCodeForUrl("http://localhost:50325/App/#/?connectionId=" + connectionId);
+            var qrcUrl = _urlShortener.GetQrCodeForUrl(string.Format(Settings.Default.RemoteControlAppUrlFormat, connectionId));
 
             Clients.Client(connectionId).setQrCode(new Uri(qrcUrl, UriKind.Absolute));
             return base.OnConnected();
