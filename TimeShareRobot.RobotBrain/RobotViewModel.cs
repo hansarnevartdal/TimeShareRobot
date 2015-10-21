@@ -16,8 +16,8 @@ namespace TimeShareRobot.RobotBrain
         {
             _dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 
-            var connection = new HubConnection("http://localhost:50278/signalr");
-            //var connection = new HubConnection("http://time-share-robot-server.azurewebsites.net/signalr");
+            //var connection = new HubConnection("http://localhost:50278/signalr");
+            var connection = new HubConnection("http://time-share-robot-server.azurewebsites.net/signalr");
             proxy = connection.CreateHubProxy("RobotHub");
 
             RegisterEventHandlers(proxy);            
